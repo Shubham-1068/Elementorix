@@ -42,7 +42,7 @@ Elementorix is a collaborative, open-source React component library built with m
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/elementorix.git
+git clone https://github.com/Shubham-1068/Elementorix.git
 cd elementorix
 ```
 

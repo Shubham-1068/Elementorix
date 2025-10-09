@@ -84,7 +84,7 @@ export default function ContributionGuidelines() {
               <ol className="space-y-3 text-zinc-300">
                 <li className="flex items-start gap-3">
                   <span className="bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5">1</span>
-                  <span>Go to the <a href="https://github.com/elementorix/elementorix" className="text-indigo-400 hover:text-indigo-300 underline">Elementorix repository</a></span>
+                  <span>Go to the <a href="https://github.com/Shubham-1068/Elementorix" className="text-indigo-400 hover:text-indigo-300 underline">Elementorix repository</a></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5">2</span>
@@ -101,7 +101,7 @@ export default function ContributionGuidelines() {
               <h3 className="text-xl font-semibold text-white mb-4">Step 2.2: Clone Your Fork</h3>
               <div className="bg-zinc-900 rounded-lg p-4 mb-4">
                 <code className="text-green-400 text-sm">
-                  git clone https://github.com/YOUR_USERNAME/elementorix.git
+                  git clone https://github.com/YOUR_USERNAME/Elementorix.git
                 </code>
               </div>
               <p className="text-zinc-300 text-sm">
