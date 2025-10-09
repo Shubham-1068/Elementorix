@@ -1,0 +1,228 @@
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+
+function Components() {
+    const [copiedId, setCopiedId] = useState(null);
+
+    // Copy to clipboard function
+    const copyToClipboard = async (text, componentId) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            setCopiedId(componentId);
+            setTimeout(() => setCopiedId(null), 2000);
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
+        }
+    };
+
+    // Central registry: add a new card entry to showcase a component.
+    // Each entry renders inside a uniform "box" so you just need to add the component JSX inside the preview field.
+
+    // HOW TO ADD A NEW COMPONENT CARD:
+    // 1) Import your component at the top of this file.
+    // 2) Copy the object below, give it a unique id, title, description, contributor, and code.
+    // 3) Put your component JSX inside the preview field.
+    // 4) Keep previews simple and focused.
+    // {
+    //     id: 'your-unique-id',
+    //     title: 'Your Component Name',
+    //     description: 'Short helpful description for beginners.',
+    //     contributor: 'Your Name',
+    //     code: 'Your component code here...',
+    //     preview: (
+    //         <YourComponent propA="..." />
+    //     )
+    // },
+
+    // Note: keep the code in the code and preview fields same.
+
+
+    const componentCards = [
+        {
+            id: 'button',
+            title: 'Button',
+            description: 'Versatile button with variants and sizes.',
+            contributor: 'Shubham',
+            code: `<div className="flex flex-wrap items-center gap-2">
+                    <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer" onClick={() => alert('Primary clicked')}>Primary</button>
+                    <button className="px-4 py-2 border border-indigo-600 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors cursor-pointer" onClick={() => alert('Outline clicked')}>Outline</button>
+                    <button className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors cursor-pointer" onClick={() => alert('Small clicked')}>Small</button>
+                </div>`,
+            preview: (
+                <div className="flex flex-wrap items-center gap-2">
+                    <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer" onClick={() => alert('Primary clicked')}>Primary</button>
+                    <button className="px-4 py-2 border border-indigo-600 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors cursor-pointer" onClick={() => alert('Outline clicked')}>Outline</button>
+                    <button className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors cursor-pointer" onClick={() => alert('Small clicked')}>Small</button>
+                </div>
+            )
+        },
+        {
+            id: 'card',
+            title: 'Card',
+            description: 'Interactive card component with hover effects.',
+            contributor: 'Elementorix Team',
+            code: `<motion.div
+                    className="bg-zinc-800 rounded-lg p-4 border border-zinc-700 cursor-pointer"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                >
+                    <h3 className="text-white font-semibold mb-2">Example Card</h3>
+                    <p className="text-zinc-400 text-sm">This is a sample card component with hover animations.</p>
+                </motion.div>`,
+            preview: (
+                <motion.div
+                    className="bg-zinc-800 rounded-lg p-4 border border-zinc-700 cursor-pointer"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                >
+                    <h3 className="text-white font-semibold mb-2">Example Card</h3>
+                    <p className="text-zinc-400 text-sm">This is a sample card component with hover animations.</p>
+                </motion.div>
+            )
+        },
+        {
+            id: 'input',
+            title: 'Input Field',
+            description: 'Styled input with focus states and validation.',
+            contributor: 'Elementorix Team',
+            code: `<div className="space-y-3">
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    />
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    />
+                </div>`,
+            preview: (
+                <div className="space-y-3">
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    />
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    />
+                </div>
+            )
+        },
+        {
+            id: 'badge',
+            title: 'Badge',
+            description: 'Status badges with different variants.',
+            contributor: 'Elementorix Team',
+            code: `<div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">Success</span>
+                    <span className="px-2 py-1 bg-yellow-600 text-yellow-100 text-xs rounded-full">Warning</span>
+                    <span className="px-2 py-1 bg-red-600 text-red-100 text-xs rounded-full">Error</span>
+                    <span className="px-2 py-1 bg-blue-600 text-blue-100 text-xs rounded-full">Info</span>
+                </div>`,
+            preview: (
+                <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">Success</span>
+                    <span className="px-2 py-1 bg-yellow-600 text-yellow-100 text-xs rounded-full">Warning</span>
+                    <span className="px-2 py-1 bg-red-600 text-red-100 text-xs rounded-full">Error</span>
+                    <span className="px-2 py-1 bg-blue-600 text-blue-100 text-xs rounded-full">Info</span>
+                </div>
+            )
+        },
+        {
+            id: 'avatar',
+            title: 'Avatar',
+            description: 'User avatar with fallback initials.',
+            contributor: 'Elementorix Team',
+            code: `<div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        JD
+                    </div>
+                    <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        AB
+                    </div>
+                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        SM
+                    </div>
+                </div>`,
+            preview: (
+                <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        JD
+                    </div>
+                    <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        AB
+                    </div>
+                    <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        SM
+                    </div>
+                </div>
+            )
+        },
+    ]
+
+
+    return (
+        <>
+            <main className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8">
+                <header className="mb-6">
+                    <h1 className="text-3xl font-semibold">React Basic Component Library</h1>
+                    <p className="mt-2 text-sm text-gray-300">
+                        Add your component by appending a new card entry to the registry below.
+                    </p>
+                </header>
+
+                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {componentCards.map(({ id, title, description, contributor, code, preview }) => (
+                        <article
+                            key={id}
+                            className="rounded-lg border border-gray-800 bg-neutral-900 shadow-sm p-4 hover:border-gray-700 transition-colors"
+                        >
+                            <div className="mb-3">
+                                <div className="flex items-center justify-between mb-2">
+                                    <h2 className="text-lg font-medium text-white">{title}</h2>
+                                    <button
+                                        onClick={() => copyToClipboard(code, id)}
+                                        className="flex items-center gap-1 px-2 py-1 text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white rounded transition-colors"
+                                        title="Copy component code"
+                                    >
+                                        {copiedId === id ? (
+                                            <>
+                                                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                                Copied!
+                                            </>
+                                        ) : (
+                                            <>
+                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                                </svg>
+                                                Copy
+                                            </>
+                                        )}
+                                    </button>
+                                </div>
+                                {description ? (
+                                    <p className="text-sm text-gray-300 mb-2">{description}</p>
+                                ) : null}
+                                <div className="flex items-center gap-2 text-xs text-gray-400">
+                                    <span>by</span>
+                                    <span className="font-medium text-indigo-400">{contributor}</span>
+                                </div>
+                            </div>
+                            <div className="rounded-md bg-neutral-800 p-4">
+                                {preview}
+                            </div>
+                        </article>
+                    ))}
+                </section>
+            </main>
+        </>
+    )
+}
+
+export default Components
