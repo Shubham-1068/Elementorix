@@ -162,6 +162,243 @@ function Components() {
                 </div>
             )
         },
+        {
+            
+  id: 'loader',
+  title: 'Loader',
+  description: 'Circle loader, DNA loader, and Premium Infinity loader combined.',
+  contributor: 'Ashutosh Kesarwani',
+  code:`<div className="flex gap-6 items-center justify-center bg-gray-900 p-4 rounded-lg">
+      
+      {/* Circle Loader */}
+      <svg
+        className="animate-spin h-8 w-8 text-indigo-500"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+          fill="none"
+        />
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        />
+      </svg>
+
+      {/* DNA Loader */}
+      <svg
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+        aria-label="dna-loader"
+      >
+        <circle cx="15" cy="15" r="5" fill="#4fa94d">
+          <animate
+            attributeName="cy"
+            values="15;45;15"
+            dur="1s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="45" cy="45" r="5" fill="#3fc8ef">
+          <animate
+            attributeName="cy"
+            values="45;15;45"
+            dur="1s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <line
+          x1="15"
+          y1="15"
+          x2="45"
+          y2="45"
+          stroke="#ccc"
+          strokeWidth="2"
+        />
+        <line
+          x1="45"
+          y1="15"
+          x2="15"
+          y2="45"
+          stroke="#ccc"
+          strokeWidth="2"
+        />
+      </svg>
+
+      {/* Premium Infinity Spin Loader */}
+      <svg
+        width="80"
+        height="40"
+        viewBox="0 0 80 40"
+        aria-label="infinity-spin-loading"
+      >
+        <defs>
+          <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4fa94d">
+              <animate
+                attributeName="stop-color"
+                values="#4fa94d;#3fc8ef;#4fa94d"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </stop>
+            <stop offset="100%" stopColor="#3fc8ef">
+              <animate
+                attributeName="stop-color"
+                values="#3fc8ef;#4fa94d;#3fc8ef"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+
+        {/* Rotating group */}
+        <g>
+          {/* Faded Infinity Outline */}
+          <path
+            d="M10,20 C10,10 30,10 40,20 C50,30 70,30 70,20 C70,10 50,10 40,20 C30,30 10,30 10,20 Z"
+            fill="none"
+            stroke="#e6f4ea"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+
+          {/* Gradient Infinity Path */}
+          <path
+            d="M10,20 C10,10 30,10 40,20 C50,30 70,30 70,20 C70,10 50,10 40,20 C30,30 10,30 10,20 Z"
+            fill="none"
+            stroke="url(#infinityGradient)"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </g>
+      </svg>
+    </div>`,
+    preview: (
+    <div className="flex gap-6 items-center justify-center bg-gray-900 p-4 rounded-lg">
+      
+      {/* Circle Loader */}
+      <svg
+        className="animate-spin h-8 w-8 text-indigo-500"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+          fill="none"
+        />
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        />
+      </svg>
+
+      {/* DNA Loader */}
+      <svg
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+        aria-label="dna-loader"
+      >
+        <circle cx="15" cy="15" r="5" fill="#4fa94d">
+          <animate
+            attributeName="cy"
+            values="15;45;15"
+            dur="1s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle cx="45" cy="45" r="5" fill="#3fc8ef">
+          <animate
+            attributeName="cy"
+            values="45;15;45"
+            dur="1s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <line
+          x1="15"
+          y1="15"
+          x2="45"
+          y2="45"
+          stroke="#ccc"
+          strokeWidth="2"
+        />
+        <line
+          x1="45"
+          y1="15"
+          x2="15"
+          y2="45"
+          stroke="#ccc"
+          strokeWidth="2"
+        />
+      </svg>
+
+      {/* Premium Infinity Spin Loader */}
+      <svg
+        width="80"
+        height="40"
+        viewBox="0 0 80 40"
+        aria-label="infinity-spin-loading"
+      >
+        <defs>
+          <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#4fa94d">
+              <animate
+                attributeName="stop-color"
+                values="#4fa94d;#3fc8ef;#4fa94d"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </stop>
+            <stop offset="100%" stopColor="#3fc8ef">
+              <animate
+                attributeName="stop-color"
+                values="#3fc8ef;#4fa94d;#3fc8ef"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+
+        {/* Rotating group */}
+        <g>
+          {/* Faded Infinity Outline */}
+          <path
+            d="M10,20 C10,10 30,10 40,20 C50,30 70,30 70,20 C70,10 50,10 40,20 C30,30 10,30 10,20 Z"
+            fill="none"
+            stroke="#e6f4ea"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+
+          {/* Gradient Infinity Path */}
+          <path
+            d="M10,20 C10,10 30,10 40,20 C50,30 70,30 70,20 C70,10 50,10 40,20 C30,30 10,30 10,20 Z"
+            fill="none"
+            stroke="url(#infinityGradient)"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />      
+        </g>
+      </svg>
+    </div>
+  )
+}
     ]
 
 
