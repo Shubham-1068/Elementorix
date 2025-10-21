@@ -1,7 +1,19 @@
+/* Existing styles (from your message) */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 1rem;
+  min-height: 100vh;           /* 👈 Ensures root fills viewport */
+  display: flex;
+  flex-direction: column;
+  position: relative;          /* 👈 Allows absolute backgrounds to align */
+  z-index: 2;
 }
 
 .logo {
@@ -18,12 +30,8 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,6 +47,34 @@
   border-radius: 12px;
 }
 
+/* 💡 Cards grid flex fix: add this to your grid wrapper */
+.cards-grid {
+  flex: 1 1 auto;                /* 👈 Grows to fill available space */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
 .read-the-docs {
   color: #888;
+}
+
+/* Add these for the LightRays background effect */
+.custom-rays {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(20,20,30,0.85), rgba(20,20,30,0.95));
+  z-index: 1;
+  pointer-events: none;
 }
