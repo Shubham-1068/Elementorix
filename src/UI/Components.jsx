@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { ToastContainer, toast } from 'react-toastify';
-import AccessibleAccordion from '../components/AccessibleAccordion';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import AccessibleAccordion from "../components/AccessibleAccordion";
 
 function Components() {
   // Copy to clipboard function
   const copyToClipboard = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      toast.success('Copied to clipboard!');
+      toast.success("Copied to clipboard!");
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     }
   };
   // Central registry: add a new card entry to showcase a component.
@@ -34,13 +34,12 @@ function Components() {
 
   // Note: keep the code in the code and preview fields same.
 
-
   const componentCards = [
     {
-      id: 'button',
-      title: 'Button',
-      description: 'Versatile button with variants and sizes.',
-      contributor: 'Shubham',
+      id: "button",
+      title: "Button",
+      description: "Versatile button with variants and sizes.",
+      contributor: "Shubham",
       code: `<div className="flex flex-wrap items-center gap-2">
                     <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer" onClick={() => alert('Primary clicked')}>Primary</button>
                     <button className="px-4 py-2 border border-indigo-600 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors cursor-pointer" onClick={() => alert('Outline clicked')}>Outline</button>
@@ -48,17 +47,32 @@ function Components() {
                 </div>`,
       preview: (
         <div className="flex flex-wrap items-center gap-2">
-          <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer" onClick={() => alert('Primary clicked')}>Primary</button>
-          <button className="px-4 py-2 border border-indigo-600 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors cursor-pointer" onClick={() => alert('Outline clicked')}>Outline</button>
-          <button className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors cursor-pointer" onClick={() => alert('Small clicked')}>Small</button>
+          <button
+            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer"
+            onClick={() => alert("Primary clicked")}
+          >
+            Primary
+          </button>
+          <button
+            className="px-4 py-2 border border-indigo-600 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:text-white transition-colors cursor-pointer"
+            onClick={() => alert("Outline clicked")}
+          >
+            Outline
+          </button>
+          <button
+            className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors cursor-pointer"
+            onClick={() => alert("Small clicked")}
+          >
+            Small
+          </button>
         </div>
-      )
+      ),
     },
     {
-      id: 'card',
-      title: 'Card',
-      description: 'Interactive card component with hover effects.',
-      contributor: 'Elementorix Team',
+      id: "card",
+      title: "Card",
+      description: "Interactive card component with hover effects.",
+      contributor: "Elementorix Team",
       code: `<motion.div
                     className="bg-zinc-800 rounded-lg p-4 border border-zinc-700 cursor-pointer"
                     whileHover={{ scale: 1.02, y: -2 }}
@@ -74,15 +88,17 @@ function Components() {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <h3 className="text-white font-semibold mb-2">Example Card</h3>
-          <p className="text-zinc-400 text-sm">This is a sample card component with hover animations.</p>
+          <p className="text-zinc-400 text-sm">
+            This is a sample card component with hover animations.
+          </p>
         </motion.div>
-      )
+      ),
     },
     {
-      id: 'input',
-      title: 'Input Field',
-      description: 'Styled input with focus states and validation.',
-      contributor: 'Elementorix Team',
+      id: "input",
+      title: "Input Field",
+      description: "Styled input with focus states and validation.",
+      contributor: "Elementorix Team",
       code: `<div className="space-y-3">
                     <input
                         type="text"
@@ -108,13 +124,13 @@ function Components() {
             className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
           />
         </div>
-      )
+      ),
     },
     {
-      id: 'badge',
-      title: 'Badge',
-      description: 'Status badges with different variants.',
-      contributor: 'Elementorix Team',
+      id: "badge",
+      title: "Badge",
+      description: "Status badges with different variants.",
+      contributor: "Elementorix Team",
       code: `<div className="flex flex-wrap gap-2">
                     <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">Success</span>
                     <span className="px-2 py-1 bg-yellow-600 text-yellow-100 text-xs rounded-full">Warning</span>
@@ -123,18 +139,26 @@ function Components() {
                 </div>`,
       preview: (
         <div className="flex flex-wrap gap-2">
-          <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">Success</span>
-          <span className="px-2 py-1 bg-yellow-600 text-yellow-100 text-xs rounded-full">Warning</span>
-          <span className="px-2 py-1 bg-red-600 text-red-100 text-xs rounded-full">Error</span>
-          <span className="px-2 py-1 bg-blue-600 text-blue-100 text-xs rounded-full">Info</span>
+          <span className="px-2 py-1 bg-green-600 text-green-100 text-xs rounded-full">
+            Success
+          </span>
+          <span className="px-2 py-1 bg-yellow-600 text-yellow-100 text-xs rounded-full">
+            Warning
+          </span>
+          <span className="px-2 py-1 bg-red-600 text-red-100 text-xs rounded-full">
+            Error
+          </span>
+          <span className="px-2 py-1 bg-blue-600 text-blue-100 text-xs rounded-full">
+            Info
+          </span>
         </div>
-      )
+      ),
     },
     {
-      id: 'avatar',
-      title: 'Avatar',
-      description: 'User avatar with fallback initials.',
-      contributor: 'Elementorix Team',
+      id: "avatar",
+      title: "Avatar",
+      description: "User avatar with fallback initials.",
+      contributor: "Elementorix Team",
       code: `<div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold">
                         JD
@@ -158,14 +182,67 @@ function Components() {
             SM
           </div>
         </div>
-      )
+      ),
     },
     {
+      id: "toggle-switch",
+      title: "Toggle Switch",
+      description:
+        "A digital on/off control to quickly change the state of a single setting or feature",
+      contributor: "Surya Prakash Mallah",
+      code: `<div className="flex gap-6 items-center justify-center p-4 rounded-lg">
+          <label className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500">
+            <input
+              className="peer sr-only"
+              id="AcceptConditions"
+              type="checkbox"
+            />
+            <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-8 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"></span>
+          </label>
+          <label
+            className="relative h-8 w-12 cursor-pointer [-webkit-tap-highlight-color:_transparent]"
+            for="switch"
+          >
+            <input className="peer sr-only" id="switch" type="checkbox" />
 
-      id: 'loader',
-      title: 'Loader',
-      description: 'Circle loader, DNA loader, and Premium Infinity loader combined.',
-      contributor: 'Ashutosh Kesarwani',
+            <span className="absolute inset-0 m-auto h-2 rounded-full bg-stone-400"></span>
+
+            <span className="absolute inset-y-0 start-0 m-auto size-6 rounded-full bg-stone-600 transition-all peer-checked:start-6 peer-checked:[&amp;_>_*]:scale-0">
+              <span className="absolute inset-0 m-auto size-4 rounded-full bg-stone-300 transition"></span>
+            </span>
+          </label>
+        </div>`,
+      preview: (
+        <div className="flex gap-6 items-center justify-center p-4 rounded-lg">
+          <label className="relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-green-500">
+            <input
+              className="peer sr-only"
+              id="AcceptConditions"
+              type="checkbox"
+            />
+            <span className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-8 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"></span>
+          </label>
+          <label
+            className="relative h-8 w-12 cursor-pointer [-webkit-tap-highlight-color:_transparent]"
+            for="switch"
+          >
+            <input className="peer sr-only" id="switch" type="checkbox" />
+
+            <span className="absolute inset-0 m-auto h-2 rounded-full bg-stone-400"></span>
+
+            <span className="absolute inset-y-0 start-0 m-auto size-6 rounded-full bg-stone-600 transition-all peer-checked:start-6 peer-checked:[&amp;_>_*]:scale-0">
+              <span className="absolute inset-0 m-auto size-4 rounded-full bg-stone-300 transition"></span>
+            </span>
+          </label>
+        </div>
+      ),
+    },
+    {
+      id: "loader",
+      title: "Loader",
+      description:
+        "Circle loader, DNA loader, and Premium Infinity loader combined.",
+      contributor: "Ashutosh Kesarwani",
       code: `<div className="flex gap-6 items-center justify-center bg-gray-900 p-4 rounded-lg">
       
       {/* Circle Loader */}
@@ -282,7 +359,6 @@ function Components() {
     </div>`,
       preview: (
         <div className="flex gap-6 items-center justify-center bg-gray-900 p-4 rounded-lg">
-
           {/* Circle Loader */}
           <svg
             className="animate-spin h-8 w-8 text-indigo-500"
@@ -353,7 +429,13 @@ function Components() {
             aria-label="infinity-spin-loading"
           >
             <defs>
-              <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient
+                id="infinityGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
                 <stop offset="0%" stopColor="#4fa94d">
                   <animate
                     attributeName="stop-color"
@@ -395,14 +477,15 @@ function Components() {
             </g>
           </svg>
         </div>
-      )
+      ),
     },
     {
-    id: 'accessible-accordion',
-    title: 'Accessible Accordion',
-    description: 'A lightweight and accessible accordion component for displaying collapsible content.',
-    contributor: 'Tilak Jain',
-    code: `
+      id: "accessible-accordion",
+      title: "Accessible Accordion",
+      description:
+        "A lightweight and accessible accordion component for displaying collapsible content.",
+      contributor: "Tilak Jain",
+      code: `
 import { useState } from "react";
 
 export default function AccessibleAccordion() {
@@ -482,55 +565,68 @@ export default function AccessibleAccordion() {
   );
 }
 `,
-    preview: <AccessibleAccordion />
-  },
-  ]
-
+      preview: <AccessibleAccordion />,
+    },
+  ];
 
   return (
     <>
       <main className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8">
         <header className="mb-6">
-          <h1 className="text-3xl font-semibold">React Basic Component Library</h1>
+          <h1 className="text-3xl font-semibold">
+            React Basic Component Library
+          </h1>
           <p className="mt-2 text-sm text-gray-300">
-            Add your component by appending a new card entry to the registry below.
+            Add your component by appending a new card entry to the registry
+            below.
           </p>
         </header>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {componentCards.map(({ id, title, description, contributor, code, preview }) => (
-            <article
-              key={id}
-              className="rounded-lg border border-gray-800 bg-neutral-900 shadow-sm p-4 hover:border-gray-700 transition-colors"
-            >
-              <div className="mb-3">
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-lg font-medium text-white">{title}</h2>
-                  <button
-                    onClick={() => copyToClipboard(code)}
-                    className="flex cursor-pointer items-center gap-1 px-2 py-1 text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white rounded transition-colors"
-                    title="Copy component code"
-                  >
-
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    Copy
-                  </button>
+          {componentCards.map(
+            ({ id, title, description, contributor, code, preview }) => (
+              <article
+                key={id}
+                className="rounded-lg border border-gray-800 bg-neutral-900 shadow-sm p-4 hover:border-gray-700 transition-colors"
+              >
+                <div className="mb-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <h2 className="text-lg font-medium text-white">{title}</h2>
+                    <button
+                      onClick={() => copyToClipboard(code)}
+                      className="flex cursor-pointer items-center gap-1 px-2 py-1 text-xs bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white rounded transition-colors"
+                      title="Copy component code"
+                    >
+                      <svg
+                        className="w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                      Copy
+                    </button>
+                  </div>
+                  {description ? (
+                    <p className="text-sm text-gray-300 mb-2">{description}</p>
+                  ) : null}
+                  <div className="flex items-center gap-2 text-xs text-gray-400">
+                    <span>by</span>
+                    <span className="font-medium text-indigo-400">
+                      {contributor}
+                    </span>
+                  </div>
                 </div>
-                {description ? (
-                  <p className="text-sm text-gray-300 mb-2">{description}</p>
-                ) : null}
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  <span>by</span>
-                  <span className="font-medium text-indigo-400">{contributor}</span>
-                </div>
-              </div>
-              <div className="rounded-md bg-neutral-800 p-4">
-                {preview}
-              </div>
-            </article>
-          ))}
+                <div className="rounded-md bg-neutral-800 p-4">{preview}</div>
+              </article>
+            )
+          )}
         </section>
 
         <ToastContainer
@@ -547,7 +643,7 @@ export default function AccessibleAccordion() {
         />
       </main>
     </>
-  )
+  );
 }
 
-export default Components
+export default Components;
